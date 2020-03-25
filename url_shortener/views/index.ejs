@@ -1,0 +1,45 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>URL Shortener</title>
+  <meta name="description" content="URL SHortener">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="continer m-4">
+  <h1 class="display-2">URL Shortener</h1>
+  <div class="blockquote-footer font-weight-bold text-uppercase text-left">This shortens everything</div>
+  <form method="POST" action="/shortUrls" class="my-4 form-inline">
+  	<label for="fullURL" class="sr-only">U R L :</label>
+  	<input required type="url" name="fullURL" id="fullURL" class="form-control mr-2">
+  	<button class="btn btn-outline-info" type="submit">Shorten</button>
+  	<div class="spinner-grow" role="status"></div>
+  </form>
+  <table class="table table-hover table-responsive">
+  	<thead>
+  		<tr>
+  			<th>Full URL</th>
+  			<th>Short URL</th>
+  			<th>Clicks</th>
+  		</tr>
+  	</thead>
+  	<tbody>
+  		<% shortUrls.forEach(Url => { %>
+  			<tr>
+  				<td><a href="<%= shortUrl.fullUrl %>"><%= Url.full %></a></td>
+  				<td><a href="<%= shortUrl.shortUrl %>"><%= Url.short %></a></td>
+  				<td><%= Url.clicks %></td>
+  			</tr>
+  		<% }) %>
+  	</tbody>
+  </table>
+</div>
+</body>
+</html>
