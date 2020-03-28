@@ -5,8 +5,6 @@
   <meta charset="utf-8">
 
   <title>URL Shortener</title>
-  <meta name="description" content="URL SHortener">
-  <meta name="author" content="SitePoint">
 
   <link rel="stylesheet" href="css/styles.css?v=1.0">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -21,6 +19,7 @@
   	<input required type="url" name="fullURL" id="fullURL" class="form-control mr-2">
   	<button class="btn btn-outline-info" type="submit">Shorten</button>
   	<div class="spinner-grow" role="status"></div>
+    <div><%= url.full %> : <a href="<%= url.short %>"><%= url.short %></a></div>
   </form>
   <table class="table table-hover table-responsive">
   	<thead>
